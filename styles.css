@@ -10,7 +10,7 @@
 
 @font-face {
   font-family: "NightclawVandal";
-  src: url("/assets/fonts/NightclawVandal.ttf")
+  src: url("./assets/fonts/NightclawVandal.ttf")
     format("truetype");
   font-weight: 400;
   font-style: normal;
@@ -19,7 +19,7 @@
 
 @font-face {
   font-family: "PermanentMarker";
-  src: url("/assets/fonts/PermanentMarker.ttf")
+  src: url("./assets/fonts/PermanentMarker.ttf")
     format("truetype");
   font-weight: 400;
   font-style: normal;
@@ -146,7 +146,6 @@ button {
     background: var(--color-primary);
     color: #000;
 }
-
 
 /* =========================================================
    ACCESSIBILITY
@@ -1111,7 +1110,7 @@ p {
 
         overflow: hidden;
 
-        background-image: url("/assets/images/hero-background.jpg");
+        background-image: url("./assets/images/hero-background.png");
         background-size: cover;
         background-position: center;
         background-repeat: no-repeat;
@@ -1221,6 +1220,10 @@ p {
 
     .mobile-menu.is-open {
         display: block;
+    }
+
+    .mobile-menu .button--app {
+        color: #000;
     }
 
     h1 {
@@ -1347,6 +1350,11 @@ body.menu-open {
 
 #mobile-menu {
   display: none;
+}
+#mobile-menu a.button--app,
+#mobile-menu a.button--app:hover,
+#mobile-menu a.button--app:focus {
+    color: #000;
 }
 
 @media (max-width: 680px) {
