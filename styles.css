@@ -10,7 +10,7 @@
 
 @font-face {
   font-family: "NightclawVandal";
-  src: url("/assets/fonts/NightclawVandal.ttf")
+  src: url("./assets/fonts/NightclawVandal.ttf")
     format("truetype");
   font-weight: 400;
   font-style: normal;
@@ -19,7 +19,7 @@
 
 @font-face {
   font-family: "PermanentMarker";
-  src: url("/assets/fonts/PermanentMarker.ttf")
+  src: url("./assets/fonts/PermanentMarker.ttf")
     format("truetype");
   font-weight: 400;
   font-style: normal;
