@@ -363,14 +363,17 @@ p {
     justify-content: space-between;
 }
 
+
 .navbar__logo {
-    color: var(--color-primary);
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
 
-    font-family: var(--font-display);
-
-    font-size: 2rem;
-
-    line-height: 1;
+.navbar__logo img {
+    display: block;
+    width: 220px;
+    height: auto;
 }
 
 .navbar__links {
@@ -718,6 +721,27 @@ p {
         );
 }
 
+.sport-card__cta {
+    position: absolute;
+    right: 24px;
+    bottom: 20px;
+
+    font-size: 1.4rem;
+    font-weight: 900;
+    letter-spacing: -0.15em;
+
+    color: var(--color-primary);
+
+    transition:
+        transform 180ms ease,
+        letter-spacing 180ms ease;
+}
+
+.sport-card:hover .sport-card__cta {
+    transform: translateX(6px);
+    letter-spacing: 0;
+}
+
 .sport-card__icon {
     width: 72px;
     height: 72px;
@@ -1028,20 +1052,24 @@ p {
    ========================================================= */
 
 .site-footer {
-    border-top: 1px solid var(--color-border);
+    min-height: 80px;
 
-    background:
-        var(--color-background-secondary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 0 40px;
+
+    border-top: 1px solid #292929;
 }
 
 .site-footer__content {
+    width: 100%;
+    max-width: 1400px;
+
     display: flex;
-
-    justify-content: space-between;
-
-    gap: 60px;
-
-    padding-block: 60px;
+    align-items: center;
+    justify-content: center;
 }
 
 .site-footer__brand > a {
@@ -1050,6 +1078,12 @@ p {
     font-family: var(--font-display);
 
     font-size: 2.2rem;
+}
+
+.site-footer__brand img {
+    display: block;
+    width: 180px;
+    height: auto;
 }
 
 .site-footer__brand p {
@@ -1191,6 +1225,16 @@ p {
     .sports__grid {
         grid-template-columns:
             repeat(2, 1fr);
+    }
+
+    .navbar__logo img {
+        width: 160px;
+        max-width: 160px;
+    }
+
+    .site-footer__brand img {
+        width: 150px;
+        max-width: 150px;
     }
 
 }
