@@ -1,32 +1,30 @@
 let deferredPrompt = null;
 
 window.addEventListener('beforeinstallprompt', (event) => {
-    event.preventDefault();
-    deferredPrompt = event;
+  console.log('PWA pode ser instalado');
 
-    const installButton = document.getElementById('install-app');
+  // Impede o comportamento padrão do navegador
+  event.preventDefault();
 
-    if (installButton) {
-        installButton.style.display = 'block';
-    }
+  // Guarda o evento para usarmos depois
+  deferredPrompt = event;
 });
 
-document.addEventListener('DOMContentLoaded', () => {
-    const installButton = document.getElementById('install-app');
+window.installPWA = async () => {
+  if (!deferredPrompt) {
+    console.log('PWA não está disponível para instalação');
+    return false;
+  }
 
-    if (!installButton) return;
+  // IMPORTANTE:
+  // isso precisa acontecer como resultado de um clique do usuário
+  deferredPrompt.prompt();
 
-    installButton.addEventListener('click', async () => {
-        if (!deferredPrompt) {
-            return;
-        }
+  const { outcome } = await deferredPrompt.userChoice;
 
-        deferredPrompt.prompt();
+  console.log('Resultado da instalação:', outcome);
 
-        const { outcome } = await deferredPrompt.userChoice;
+  deferredPrompt = null;
 
-        console.log(`Instalação: ${outcome}`);
-
-        deferredPrompt = null;
-    });
-});
+  return outcome === 'accepted';
+};
